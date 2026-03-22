@@ -1,0 +1,35 @@
+services:
+  wireguard:
+    image: ghcr.io/wg-easy/wg-easy:14
+    container_name: wireguard
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    environment:
+      - WG_MTU=1420
+
+    volumes:
+      - ./config:/etc/wireguard
+
+    ports:
+      - "51820:51820/udp"
+      - "${WG_UI_PORT:-51821}:51821/tcp"
+
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+
+    devices:
+      - /dev/net/tun
+
+    sysctls:
+      - net.ipv4.ip_forward=1
+
+    networks:
+      - net_access
+
+networks:
+  net_access:
+    external: true

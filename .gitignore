@@ -1,6 +1,28 @@
+# Pi-hole data
+docker/pihole/data/*
+!docker/pihole/data/.gitkeep
+
+# WireGuard sensitive data
+docker/wireguard/config/*
+!docker/wireguard/config/.gitkeep
+
+# DuckDNS data
+docker/duckdns/config/*
+!docker/duckdns/config/.gitkeep
+
+# Portainer data
+docker/portainer/data/*
+!docker/portainer/data/.gitkeep
+
+# System configs (sensitive)
+configs/*
+!configs/*/
+!configs/**/.gitkeep
+
 # ENV FILES (SENSITIVE)
 .env
 .env.*
+!.env.example
 
 # DATA
 data/
@@ -21,3 +43,4 @@ Thumbs.db
 *.bak
 *.tar
 *.gz
+

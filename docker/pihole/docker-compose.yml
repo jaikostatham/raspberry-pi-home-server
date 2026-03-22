@@ -10,7 +10,7 @@ services:
       - .env
 
     volumes:
-      - /srv/docker/data/pihole:/etc/pihole
+      - ./data:/etc/pihole
       - ./etc-dnsmasq.d:/etc/dnsmasq.d
 
     cap_add:
