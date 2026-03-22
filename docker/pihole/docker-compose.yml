@@ -1,0 +1,17 @@
+services:
+  pihole:
+    image: pihole/pihole:2024.05.0
+    container_name: pihole
+    restart: unless-stopped
+
+    network_mode: host
+
+    env_file:
+      - .env
+
+    volumes:
+      - /srv/docker/data/pihole:/etc/pihole
+      - ./etc-dnsmasq.d:/etc/dnsmasq.d
+
+    cap_add:
+      - NET_ADMIN

@@ -1,0 +1,23 @@
+# ENV FILES (SENSITIVE)
+.env
+.env.*
+
+# DATA
+data/
+*.db
+*.sqlite
+
+# LOGS
+logs/
+*.log
+
+# OS / EDITOR
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# BACKUPS
+*.bak
+*.tar
+*.gz
