@@ -32,7 +32,7 @@ The architecture is composed of the following services:
 
 
 
-\## High-Level Architecture
+\## High-Level Architecture Diagram
 
 
 
